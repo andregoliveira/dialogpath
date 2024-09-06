@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Path</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #opening-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        #main-content {
+            display: none;
+        }
+
+        #header {
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #current-value {
+            display: block;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #threshold-title {
+            color: black;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #help-dropdown {
+            display: none; 
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+
+        .noUi-handle-lower::after,
+        .noUi-handle-upper::after {
+            content: attr(aria-valuetext);
+            position: absolute;
+            top: -30px;
+            left: -5px;
+            font-size: 12px;
+            color: black;
+            padding: 3px;
+            width: 40px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .svg-container {
+            width: 1000px;
+            position: relative;
+            margin-top: 200px;
+            margin-bottom: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex;
+        }
+
+        .buttons-container {
+            width: 200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex;
+            margin-right: 100px;
+        }
+
+        .dataset-container {
+            width: 250px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex;
+            margin-left: 80px;
+            color: black;
+        }
+
+        .id_button {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .button {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .button-orange {
+            background-color: orange;
+        }
+
+        .button-gray {
+            background-color: gray;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .button:last-child {
+            margin-bottom: 0;
+        }
+
+        .content {
+            padding-left: 10px;
+            padding-right: 10px;
+            color: black;
+            background-color: white;
+            border-radius: 5px  #ddd;
+        }
+
+        .content p {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+
+        .upload-button {
+            background-color: orange;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 17px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="opening-container" style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="font-family: 'Montserrat', sans-serif;">Dialog Path</h2>
+        <div id="text-container" style="margin-top: 30px; margin-left: 10%; margin-right: 10%; font-family: 'Montserrat', sans-serif; text-align: center;">
+            <p>"Dialog Flow Visualization" is a tool for visualizing dialogue flows through graphs, with the aim of facilitating the interpretation of dialogue datasets by individuals, services and organizations that work with them.</p>
+            <p>The format of dialog datasets read by this format is .tsv, with the columns separated by tabs, and with a structure similar to this:</p>
+            <img src="tsvexample.jpg" width="40%" height="70%">
+        </div>
+        <div style="margin-top: 30px;">
+            <button class="upload-button" onclick="window.location.href='graph_based_v21.html'">Graph Based</button>
+            <button class="upload-button" onclick="window.location.href='sankey_diagram_v10.html'">Sankey Diagram</button>
+        </div>
+    </div>            
+</body>
+</html>
